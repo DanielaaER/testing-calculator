@@ -148,4 +148,53 @@ describe('Ui Addition - Component', () => {
     expect(result).toBe(0);
  });
 
+
+
+
+ // MULTIPLICACION
+
+ it('Should render substraction in result div', () => {
+  //Arrange
+  component.operator1 = 5;
+  component.operator2 = 5;
+
+  //Act
+  component.substraction();
+  fixture.detectChanges();
+
+  let de = fixture.debugElement.query(By.css('.result'));
+  let el : HTMLElement = de.nativeElement;
+
+  //Assert
+  expect(el.innerText).toContain('0');
+});
+
+it('Should substract operator1 and operator2 when i click the multiplication button ', () => {
+  // Arrange 
+  component.operator1 = 5.0;
+  component.operator2 = 2.5;
+  let multiplicacionButton = fixture.debugElement.query(By.css('.multiplicacion-button'));
+
+  // Act
+  multiplicacionButton.triggerEventHandler('click', null);
+
+  // Assert
+  expect(component.result).toBe(12.5);
+
+ });
+
+ it('Should call multiplication method', () => {
+  // Arrange
+  let result = 0;
+  component.operator1 = 2;
+  component.operator2 = 2;
+
+  // Act
+  component.multiplication();
+  result = component.result;
+
+  // Assert
+  expect(result).toBe(4);
+});
+
 });
