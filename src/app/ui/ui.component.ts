@@ -3,6 +3,7 @@ import { addition } from "../addition/addition"
 import { substraction } from "../substraction/substraction"
 import { multiplicacion } from "../multiplicacion/multiplicacion"
 import { division } from "../division/division"
+import { percent } from '../percent/percent';
 
 @Component({
   selector: 'app-ui',
@@ -41,5 +42,12 @@ export class UiComponent implements OnInit {
     let myresult = 0;
     myresult = division(this.operator1, this.operator2);
     this.result = myresult;
+  }
+
+  percent(){
+    let myresult = 0;
+    myresult = percent(this.operator1, this.operator2);
+    this.result = myresult;
+    
   }
 }

@@ -247,4 +247,51 @@ it('Should divide operator1 and operator2 when i click the multiplication button
 });
 
 
+//PORCENTAJEE
+
+
+it('Should render percent in result div', () => {
+  //Arrange
+  component.operator1 = 5;
+  component.operator2 = 5;
+
+  //Act
+  component.percent();
+  fixture.detectChanges();
+
+  let de = fixture.debugElement.query(By.css('.result'));
+  let el : HTMLElement = de.nativeElement;
+
+  //Assert
+  expect(el.innerText).toContain('0.25');
+});
+
+it('Should calculate operator1 and operator2 when i click the percent button ', () => {
+  // Arrange 
+  component.operator1 = 5.0;
+  component.operator2 = 2.5;
+  let percentButton = fixture.debugElement.query(By.css('.percent-button'));
+
+  // Act
+  percentButton.triggerEventHandler('click', null);
+
+  // Assert
+  expect(component.result).toBe(0.125);
+
+ });
+
+ it('Should call percent method', () => {
+  // Arrange
+  let result = 0;
+  component.operator1 = 2;
+  component.operator2 = 2;
+
+  // Act
+  component.percent();
+  result = component.result;
+
+  // Assert
+  expect(result).toBe(0.04);
+});
+
 });
