@@ -1,0 +1,21 @@
+<div class="text-center"> <!-- Agregamos la clase "text-center" al contenedor principal -->
+  <p>ui works!</p>
+  <div class="calculator mx-auto">
+
+      <form>
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span> 
+              <input id="operator1" [(ngModel)]="operator1" type="number" class="form-control operator1" name="operator1" placeholder="0.0">
+          </div>
+
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+              <input id="operator2" [(ngModel)]="operator2" type="number" class="form-control operator2" name="operator2" placeholder="0.0">
+          </div>
+      </form>
+  <br>
+      <button class="btn addition-button" (click)="addition()">+</button>
+  </div>
+
+  <span class="result">{{ result }}</span>
+</div>
