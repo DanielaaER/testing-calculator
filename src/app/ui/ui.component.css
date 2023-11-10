@@ -1,35 +1,71 @@
-.calculator {
-    width: 150px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.text-center {
     text-align: center;
-    color: #999;
+    padding: 20px;
+}
+
+.calculator {
+    display: inline-block;
+    background-color: #fff;
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1); /* Aumentamos la sombra para dar más profundidad */
+    padding: 20px;
+    border-radius: 15px; /* Aumentamos el radio del borde para hacerlo más redondeado */
+}
+
+.input-group {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.input-group-addon {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.form-control {
+    border: none;
+    border-bottom: 2px solid #ddd; /* Aumentamos el grosor del borde inferior */
+    border-radius: 0;
+    padding-left: 30px;
+    transition: border-color 0.3s ease; /* Agregamos una transición suave al color del borde */
+}
+
+.form-control:focus {
+    border-color: #007bff; /* Cambiamos el color del borde en el foco */
+    outline: none; /* Eliminamos el contorno predeterminado en el foco */
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 50px; /* Hacemos los botones más redondos */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Agregamos una transición suave a los botones */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Cambiamos el color de fondo en hover */
+    transform: scale(1.1); /* Hacemos los botones un poco más grandes en hover */
 }
 
 .result {
-    font-size: 3.0em;
-    font-weight: bold;
-    color: red;
-
-}
-
-.operator1 {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: black;
-
-}
-
-.operator2 {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: blue;
-
-}
-
-.addition-button {
-    cursor: pointer;
-    color: blue;
-}
-.substraction-button {
-    cursor: pointer;
-    color: green;
+    display: block;
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* Agregamos una sombra sutil al texto */
 }
