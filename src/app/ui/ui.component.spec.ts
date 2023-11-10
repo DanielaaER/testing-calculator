@@ -247,6 +247,52 @@ it('Should divide operator1 and operator2 when i click the multiplication button
 });
 
 
+//POTENCIAAA
+it('Should render exponential in result div', () => {
+  // Arrange
+  component.operator1 = 2;
+  component.operator2 = 3;
+
+  // Act
+  component.potencia();
+  fixture.detectChanges();
+
+  let de = fixture.debugElement.query(By.css('.result'));
+  let el: HTMLElement = de.nativeElement;
+
+  // Assert
+  expect(el.innerText).toContain('8');
+});
+
+it('Should exponentiate operator1 to operator2 when I click the exponential button', () => {
+  // Arrange
+  component.operator1 = 2.5;
+  component.operator2 = 2;
+  let exponentialButton = fixture.debugElement.query(By.css('.potencia-button'));
+
+  // Act
+  exponentialButton.triggerEventHandler('click', null);
+
+  // Assert
+  expect(component.result).toBe(6.25);
+});
+
+it('Should call exponential method', () => {
+  // Arrange
+  let result = 0;
+  component.operator1 = 2;
+  component.operator2 = 3;
+
+  // Act
+  component.potencia();
+  result = component.result;
+
+  // Assert
+  expect(result).toBe(8);
+});
+
+
+
 //PORCENTAJEE
 
 
